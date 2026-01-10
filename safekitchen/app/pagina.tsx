@@ -9,6 +9,7 @@ import { Linking, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Legislacoes } from "@/components/legislacoes";
 import { Agenda } from "@/components/agenda";
 import { Fornecedores } from "@/components/fornecedores";
+import { Relatorio } from "@/components/relatorios";
 
 export default function Pagina() {
   const params = useLocalSearchParams();
@@ -48,6 +49,17 @@ export default function Pagina() {
                 text="Relatórios"
                 onPress={() => setValueRelatorios(!valueRelatorios)}
               />
+              {valueRelatorios ? (
+                <>
+                  <Relatorio date="04/11/2025" status="Finalizado" />
+                  <Relatorio date="25/11/2025" status="Finalizado" />
+                  <Relatorio date="12/12/2025" status="Finalizado" />
+                  <Relatorio date="29/12/2025" status="Finalizado" />
+                  <Relatorio date="15/01/2026" status="Agendado" />
+                </>
+              ) : (
+                <></>
+              )}
               <SelectText
                 text="Notificações"
                 onPress={() => setValueNotificacoes(!valueNotificacoes)}
@@ -62,7 +74,6 @@ export default function Pagina() {
 
 const styles = StyleSheet.create({
   scroll: {
-    //paddingBottom: -50,
     backgroundColor: "#AFDDF7",
   },
   container: {
