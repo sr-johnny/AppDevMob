@@ -52,3 +52,6 @@ Cada estabelecimento possui as seguintes seções:
 
 * **🔔 Notificações**:
   Lembretes de eventos importantes previamente agendados.
+  Lembretes de eventos importantes previamente agendados.
+
+
