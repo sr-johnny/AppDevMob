@@ -62,7 +62,7 @@ export default function Pagina() {
               )}
               <SelectText
                 text="Notificações"
-                onPress={() => setValueNotificacoes(!valueNotificacoes)}
+                onPress={() => Linking.openURL("https://www.gov.br/anvisa/pt-br/assuntos/fiscalizacao-e-monitoramento/notificacoes")}
               />
             </View>
           </>

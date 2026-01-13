@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 import {
+  Alert,
   Image,
+  Linking,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -16,6 +18,7 @@ type Props = TouchableOpacityProps & {
 
 export function Relatorio({ date, status, ...rest }: Props) {
   const [eye, setEye] = useState<boolean>(false);
+
   return (
     <>
       <View style={styles.container}>
@@ -26,7 +29,7 @@ export function Relatorio({ date, status, ...rest }: Props) {
           </Text>
         </View>
         <View style={styles.iconView}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=> Linking.openURL("https://pdfobject.com/pdf/sample.pdf")}>
             <FontAwesome name="arrow-down" size={28} color="#0a4b77ff" />
           </TouchableOpacity>
 
@@ -38,15 +41,21 @@ export function Relatorio({ date, status, ...rest }: Props) {
           />
         </View>
       </View>
-      {(eye)?
-      <View style={{alignSelf: "flex-end"}}>
-        <Text style={styles.option}> Visualizar </Text>
-        <Text style={styles.option}> Editar </Text>
-        <Text style={styles.delete}> Excluir </Text>
-      </View>
-      :
-      <></>
-      }
+      {eye ? (
+        <View style={{ alignSelf: "flex-end" }}>
+          <TouchableOpacity>
+            <Text style={styles.option}> Visualizar </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.option}> Editar </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.delete}> Excluir </Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
