@@ -29,7 +29,7 @@ export function Relatorio({ date, status, ...rest }: Props) {
           </Text>
         </View>
         <View style={styles.iconView}>
-          <TouchableOpacity onPress={()=> Linking.openURL("https://pdfobject.com/pdf/sample.pdf")}>
+          <TouchableOpacity onPress={()=> Linking.openURL("https://github.com/sr-johnny/AppDevMob/blob/main/safekitchen/assets/relatorio_safekitchen.pdf")}>
             <FontAwesome name="arrow-down" size={28} color="#0a4b77ff" />
           </TouchableOpacity>
 
